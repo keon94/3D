@@ -243,3 +243,7 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+=======
+.fake/
+# Precompiled Shader Header Files
+*.shh
