@@ -1,5 +1,3 @@
-#include <vld.h>
-
 #define DISPLAY_LEAKS_DETAILS 1
 
 #include "gtest-utilities.h"

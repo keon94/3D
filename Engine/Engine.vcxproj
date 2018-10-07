@@ -25,26 +25,26 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -69,24 +69,24 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(ProjectDir)\shaders;$(ProjectDir)\include;$(ProjectDir)\include\main;$(ProjectDir)\include\periph;$(ProjectDir)\include\utils;$(SolutionDir)\external\include</IncludePath>
-    <OutDir>$(SolutionDir)output\bin\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>$(SolutionDir)output\obj\$(Platform)\$(Configuration)\</IntDir>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(ProjectDir)\shaders;$(ProjectDir)\include;$(ProjectDir)\include\main;$(ProjectDir)\include\periph;$(ProjectDir)\include\models;$(ProjectDir)\include\utils;$(SolutionDir)\external\include</IncludePath>
+    <OutDir>$(SolutionDir)output\dep\$(PlatformTarget)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)output\obj\$(ProjectName)\$(PlatformTarget)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(ProjectDir)\shaders;$(ProjectDir)\include;$(ProjectDir)\include\main;$(ProjectDir)\include\periph;$(ProjectDir)\include\utils;$(SolutionDir)\external\include</IncludePath>
-    <OutDir>$(SolutionDir)output\bin\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>$(SolutionDir)output\obj\$(Platform)\$(Configuration)\</IntDir>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(ProjectDir)\shaders;$(ProjectDir)\include;$(ProjectDir)\include\main;$(ProjectDir)\include\periph;$(ProjectDir)\include\models;$(ProjectDir)\include\utils;$(SolutionDir)\external\include</IncludePath>
+    <OutDir>$(SolutionDir)output\dep\$(PlatformTarget)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)output\obj\$(ProjectName)\$(PlatformTarget)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(ProjectDir)\shaders;$(ProjectDir)\include;$(ProjectDir)\include\main;$(ProjectDir)\include\periph;$(ProjectDir)\include\utils;$(SolutionDir)\external\include</IncludePath>
-    <OutDir>$(SolutionDir)output\bin\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>$(SolutionDir)output\obj\$(Platform)\$(Configuration)\</IntDir>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(ProjectDir)\shaders;$(ProjectDir)\include;$(ProjectDir)\include\main;$(ProjectDir)\include\periph;$(ProjectDir)\include\models;$(ProjectDir)\include\utils;$(SolutionDir)\external\include</IncludePath>
+    <OutDir>$(SolutionDir)output\dep\$(PlatformTarget)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)output\obj\$(ProjectName)\$(PlatformTarget)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(ProjectDir)\shaders;$(ProjectDir)\include;$(ProjectDir)\include\main;$(ProjectDir)\include\periph;$(ProjectDir)\include\utils;$(SolutionDir)\external\include</IncludePath>
-    <OutDir>$(SolutionDir)output\bin\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>$(SolutionDir)output\obj\$(Platform)\$(Configuration)\</IntDir>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(ProjectDir)\shaders;$(ProjectDir)\include;$(ProjectDir)\include\main;$(ProjectDir)\include\periph;$(ProjectDir)\include\models;$(ProjectDir)\include\utils;$(SolutionDir)\external\include</IncludePath>
+    <OutDir>$(SolutionDir)output\dep\$(PlatformTarget)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)output\obj\$(ProjectName)\$(PlatformTarget)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -99,10 +99,12 @@
       <FloatingPointModel>Fast</FloatingPointModel>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <MinimalRebuild>false</MinimalRebuild>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link />
     <PostBuildEvent>
-      <Command>xcopy /b /v /y $(SolutionDir)external\dll\$(Configuration)\$(PlatformTarget)\* $(Outdir)</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -116,9 +118,11 @@
       <CallingConvention>VectorCall</CallingConvention>
       <MinimalRebuild>false</MinimalRebuild>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <PostBuildEvent>
-      <Command>xcopy /b /v /y $(SolutionDir)external\dll\$(Configuration)\$(PlatformTarget)\* $(Outdir)</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -135,13 +139,15 @@
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <PreprocessorDefinitions>NDEBUG;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /b /v /y $(SolutionDir)external\dll\$(Configuration)\$(PlatformTarget)\* $(Outdir)</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -157,25 +163,31 @@
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <PreprocessorDefinitions>NDEBUG;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /b /v /y $(SolutionDir)external\dll\$(Configuration)\$(PlatformTarget)\* $(Outdir)</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="include\Controllable.h" />
+    <ClInclude Include="include\models\Drawable.h" />
+    <ClInclude Include="include\models\Line.h" />
+    <ClInclude Include="include\models\Point.h" />
     <ClInclude Include="include\utils\ChiliException.h" />
-    <ClInclude Include="include\main\ChiliWin.h" />
     <ClInclude Include="include\Colors.h" />
+    <ClInclude Include="include\algorithms\ChiliMath.h" />
+    <ClInclude Include="include\utils\ChiliWin.h" />
     <ClInclude Include="include\utils\COMInitializer.h" />
+    <ClInclude Include="include\utils\DrawUtilities.h" />
     <ClInclude Include="include\utils\DXErr.h" />
-    <ClInclude Include="include\Game.h" />
     <ClInclude Include="include\Graphics.h" />
     <ClInclude Include="include\periph\Keyboard.h" />
-    <ClInclude Include="include\main\MainWindow.h" />
     <ClInclude Include="include\periph\Mouse.h" />
     <ClInclude Include="include\utils\Resource.h" />
     <ClInclude Include="include\periph\Sound.h" />
@@ -189,11 +201,8 @@
   <ItemGroup>
     <ClCompile Include="src\utils\COMInitializer.cpp" />
     <ClCompile Include="src\utils\DXErr.cpp" />
-    <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\Graphics.cpp" />
     <ClCompile Include="src\periph\Keyboard.cpp" />
-    <ClCompile Include="src\main\Main.cpp" />
-    <ClCompile Include="src\main\MainWindow.cpp" />
     <ClCompile Include="src\periph\Mouse.cpp" />
     <ClCompile Include="src\periph\Sound.cpp" />
   </ItemGroup>
@@ -266,6 +275,8 @@
     <Image Include="resources\Chili.ico" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="FramebufferPS.shh" />
+    <None Include="FramebufferVS.shh" />
     <None Include="shaders\FramebufferPS.shh" />
     <None Include="shaders\FramebufferVS.shh" />
   </ItemGroup>

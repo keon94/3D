@@ -19,10 +19,10 @@
 *	along with The Chili DirectX Framework.  If not, see <http://www.gnu.org/licenses/>.  *
 ******************************************************************************************/
 #pragma once
-#include "ChiliWin.h"
+#include "utils/ChiliWin.h"
 #include <d3d11.h>
 #include <wrl.h>
-#include "ChiliException.h"
+#include "utils/ChiliException.h"
 #include "Colors.h"
 
 class Graphics {
@@ -71,4 +71,16 @@ private:
 public:
     static constexpr int ScreenWidth = 800;
     static constexpr int ScreenHeight = 600;
+};
+
+// for granting special access to hWnd only for Graphics constructor
+class HWNDKey {
+    friend Graphics::Graphics(HWNDKey&);
+public:
+    HWNDKey(const HWNDKey&) = delete;
+    HWNDKey& operator=(HWNDKey&) = delete;
+protected:
+    HWNDKey() = default;
+protected:
+    HWND hWnd = nullptr;
 };

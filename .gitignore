@@ -3,7 +3,6 @@
 
 # User-specific files
 *.suo
-*.user
 *.userosscache
 *.sln.docstates
 
@@ -11,12 +10,12 @@
 *.userprefs
 
 # Build results
-[Dd]ebug/
-[Dd]ebugPublic/
-[Rr]elease/
-[Rr]eleases/
-[Xx]64/
-[Xx]86/
+output/**/[Dd]ebug/
+output/**/[Dd]ebugPublic/
+output/**/[Rr]elease/
+output/**/[Rr]eleases/
+output/**/[Xx]64/
+output/**/[Xx]86/
 [Bb]uild/
 bld/
 [Bb]in/

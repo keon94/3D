@@ -70,31 +70,31 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>$(SolutionDir)output\bin\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>$(SolutionDir)output\obj\tests\$(Platform)\$(Configuration)\</IntDir>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)external\include\test;$(ProjectDir)include</IncludePath>
+    <OutDir>$(SolutionDir)output\bin\$(PlatformTarget)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)output\obj\$(ProjectName)\$(PlatformTarget)\$(Configuration)\</IntDir>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)external\include\test;$(ProjectDir)include;$(SolutionDir)Engine\include;$(SolutionDir)Game\include;</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>$(SolutionDir)output\bin\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>$(SolutionDir)output\obj\tests\$(Platform)\$(Configuration)\</IntDir>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)external\include\test;$(ProjectDir)include</IncludePath>
+    <OutDir>$(SolutionDir)output\bin\$(PlatformTarget)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)output\obj\$(ProjectName)\$(PlatformTarget)\$(Configuration)\</IntDir>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)external\include\test;$(ProjectDir)include;$(SolutionDir)Engine\include;$(SolutionDir)Game\include;</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>$(SolutionDir)output\bin\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>$(SolutionDir)output\obj\tests\$(Platform)\$(Configuration)\</IntDir>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)external\include\test;$(ProjectDir)include</IncludePath>
+    <OutDir>$(SolutionDir)output\bin\$(PlatformTarget)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)output\obj\$(ProjectName)\$(PlatformTarget)\$(Configuration)\</IntDir>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)external\include\test;$(ProjectDir)include;$(SolutionDir)Engine\include;$(SolutionDir)Game\include;</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutDir>$(SolutionDir)output\bin\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>$(SolutionDir)output\obj\tests\$(Platform)\$(Configuration)\</IntDir>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)external\include\test;$(ProjectDir)include</IncludePath>
+    <OutDir>$(SolutionDir)output\bin\$(PlatformTarget)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)output\obj\$(ProjectName)\$(PlatformTarget)\$(Configuration)\</IntDir>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)external\include\test;$(ProjectDir)include;$(SolutionDir)Engine\include;$(SolutionDir)Game\include;</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <ConformanceMode>true</ConformanceMode>
+      <ConformanceMode>false</ConformanceMode>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <PostBuildEvent>
@@ -102,8 +102,8 @@
 xcopy /b /v /y $(SolutionDir)external\lib\$(Configuration)\$(PlatformTarget)\* $(Outdir)</Command>
     </PostBuildEvent>
     <Link>
-      <AdditionalLibraryDirectories>$(SolutionDir)external\lib\$(Configuration)\$(PlatformTarget)\</AdditionalLibraryDirectories>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;gtest.lib;gmock.lib;vld.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)external\lib\$(Configuration)\$(PlatformTarget)\;$(SolutionDir)output\dep\$(PlatformTarget)\$(Configuration)\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;gtest.lib;gmock.lib;vld.lib;Engine.lib;Game.lib</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
     </Link>
@@ -113,7 +113,7 @@ xcopy /b /v /y $(SolutionDir)external\lib\$(Configuration)\$(PlatformTarget)\* $
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <ConformanceMode>true</ConformanceMode>
+      <ConformanceMode>false</ConformanceMode>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <PostBuildEvent>
@@ -121,8 +121,8 @@ xcopy /b /v /y $(SolutionDir)external\lib\$(Configuration)\$(PlatformTarget)\* $
 xcopy /b /v /y $(SolutionDir)external\lib\$(Configuration)\$(PlatformTarget)\* $(Outdir)</Command>
     </PostBuildEvent>
     <Link>
-      <AdditionalLibraryDirectories>$(SolutionDir)external\lib\$(Configuration)\$(PlatformTarget)\</AdditionalLibraryDirectories>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;gtest.lib;gmock.lib;vld.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)external\lib\$(Configuration)\$(PlatformTarget)\;$(SolutionDir)output\dep\$(PlatformTarget)\$(Configuration)\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;gtest.lib;gmock.lib;vld.lib;Engine.lib</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
     </Link>
@@ -134,13 +134,13 @@ xcopy /b /v /y $(SolutionDir)external\lib\$(Configuration)\$(PlatformTarget)\* $
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <ConformanceMode>true</ConformanceMode>
+      <ConformanceMode>false</ConformanceMode>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>$(SolutionDir)external\lib\$(Configuration)\$(PlatformTarget)\</AdditionalLibraryDirectories>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;gtest.lib;gmock.lib;vld.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)external\lib\$(Configuration)\$(PlatformTarget)\;$(SolutionDir)output\dep\$(PlatformTarget)\$(Configuration)\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;gtest.lib;gmock.lib;vld.lib;Engine.lib</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
     <PostBuildEvent>
@@ -155,13 +155,13 @@ xcopy /b /v /y $(SolutionDir)external\lib\$(Configuration)\$(PlatformTarget)\* $
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <ConformanceMode>true</ConformanceMode>
+      <ConformanceMode>false</ConformanceMode>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>$(SolutionDir)external\lib\$(Configuration)\$(PlatformTarget)\</AdditionalLibraryDirectories>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;gtest.lib;gmock.lib;vld.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)external\lib\$(Configuration)\$(PlatformTarget)\;$(SolutionDir)output\dep\$(PlatformTarget)\$(Configuration)\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;gtest.lib;gmock.lib;vld.lib;Engine.lib;Game.lib</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
     <PostBuildEvent>
@@ -171,6 +171,7 @@ xcopy /b /v /y $(SolutionDir)external\lib\$(Configuration)\$(PlatformTarget)\* $
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\tests\ReticleTest.cpp" />
     <ClCompile Include="src\tests\SampleTests.cpp" />
   </ItemGroup>
   <ItemGroup>
