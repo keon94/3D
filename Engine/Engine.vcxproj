@@ -178,6 +178,7 @@
     <ClInclude Include="include\Controllable.h" />
     <ClInclude Include="include\models\Drawable.h" />
     <ClInclude Include="include\models\Line.h" />
+    <ClInclude Include="include\models\Object.h" />
     <ClInclude Include="include\models\Point.h" />
     <ClInclude Include="include\utils\ChiliException.h" />
     <ClInclude Include="include\Colors.h" />
@@ -189,6 +190,7 @@
     <ClInclude Include="include\Graphics.h" />
     <ClInclude Include="include\periph\Keyboard.h" />
     <ClInclude Include="include\periph\Mouse.h" />
+    <ClInclude Include="include\utils\BMPLoader.h" />
     <ClInclude Include="include\utils\Resource.h" />
     <ClInclude Include="include\periph\Sound.h" />
     <ClInclude Include="include\periph\SoundEffect.h" />
@@ -197,6 +199,7 @@
     <ClInclude Include="external\headers\XAudio\XAudio2.h" />
     <ClInclude Include="external\headers\XAudio\XAudio2fx.h" />
     <ClInclude Include="external\headers\XAudio\xma2defs.h" />
+    <ClInclude Include="include\utils\Utilities.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\utils\COMInitializer.cpp" />
@@ -205,6 +208,7 @@
     <ClCompile Include="src\periph\Keyboard.cpp" />
     <ClCompile Include="src\periph\Mouse.cpp" />
     <ClCompile Include="src\periph\Sound.cpp" />
+    <ClCompile Include="src\utils\BMPLoader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="shaders\FramebufferPS.hlsl">
@@ -269,16 +273,16 @@
     </FxCompile>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="resources\Resource.rc" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="resources\Chili.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="FramebufferPS.shh" />
     <None Include="FramebufferVS.shh" />
     <None Include="shaders\FramebufferPS.shh" />
     <None Include="shaders\FramebufferVS.shh" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="include\resources\Chili.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="include\resources\Resource.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

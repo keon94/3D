@@ -20,25 +20,11 @@ public:
         return !(*this == other);
     }
 
-    /*
-    inline Point2 operator+ (const Point2& other) {
-        return Point2(x + other.x, y + other.y); 
-    }
-
-    inline Point2 operator- (const Point2& other) {
-        return Point2(x - other.x, y - other.y); 
-    }
-
-    inline Point2 operator* (const unsigned && scalar) {
-        return Point2(scalar*x, scalar*y);
-    }
-    */
-
-    inline unsigned  getX() const {
+    inline unsigned getX() const {
         return x;
     } 
 
-    inline unsigned  getY() const {
+    inline unsigned getY() const {
         return y;
     }
 
@@ -47,4 +33,11 @@ public:
         y += deltaY;
     }
 
+};
+
+#include "Colors.h"
+
+struct ColoredPoint2 {
+    Point2 point;
+    Color color;
 };
